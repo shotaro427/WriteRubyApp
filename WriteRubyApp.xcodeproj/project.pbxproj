@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44FF1826786A1FF898FDDA02 /* Pods_WriteRubyAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2B43B295D934C966F5CD219 /* Pods_WriteRubyAppTests.framework */; };
+		7A8FAE470DFC278B88622BE9 /* Pods_WriteRubyApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D6F905353B7552F65CA574 /* Pods_WriteRubyApp.framework */; };
+		9A30B8A5EAA0D4A9EBFE78D0 /* Pods_WriteRubyApp_WriteRubyAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C94E72D3D9F95E59ACCC626F /* Pods_WriteRubyApp_WriteRubyAppUITests.framework */; };
 		E26195AB23E6B81700AFE94C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26195AA23E6B81700AFE94C /* AppDelegate.swift */; };
 		E26195AD23E6B81700AFE94C /* ConvertingTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26195AC23E6B81700AFE94C /* ConvertingTextViewController.swift */; };
 		E26195B023E6B81700AFE94C /* ConvertingText.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E26195AE23E6B81700AFE94C /* ConvertingText.storyboard */; };
@@ -36,6 +39,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		13B41FC6F84C69450CEB19EB /* Pods-WriteRubyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WriteRubyApp.debug.xcconfig"; path = "Target Support Files/Pods-WriteRubyApp/Pods-WriteRubyApp.debug.xcconfig"; sourceTree = "<group>"; };
+		20D6F905353B7552F65CA574 /* Pods_WriteRubyApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WriteRubyApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DF6C86E94D1C63EAEA15C8E /* Pods-WriteRubyAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WriteRubyAppTests.release.xcconfig"; path = "Target Support Files/Pods-WriteRubyAppTests/Pods-WriteRubyAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		624A68AE94EFED58EADD9697 /* Pods-WriteRubyApp-WriteRubyAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WriteRubyApp-WriteRubyAppUITests.release.xcconfig"; path = "Target Support Files/Pods-WriteRubyApp-WriteRubyAppUITests/Pods-WriteRubyApp-WriteRubyAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7E118F3A4243F018F90D09A6 /* Pods-WriteRubyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WriteRubyApp.release.xcconfig"; path = "Target Support Files/Pods-WriteRubyApp/Pods-WriteRubyApp.release.xcconfig"; sourceTree = "<group>"; };
+		8CB806FC5887D13B221F1377 /* Pods-WriteRubyAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WriteRubyAppTests.debug.xcconfig"; path = "Target Support Files/Pods-WriteRubyAppTests/Pods-WriteRubyAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A2B43B295D934C966F5CD219 /* Pods_WriteRubyAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WriteRubyAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C94E72D3D9F95E59ACCC626F /* Pods_WriteRubyApp_WriteRubyAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WriteRubyApp_WriteRubyAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E26195A723E6B81700AFE94C /* WriteRubyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WriteRubyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E26195AA23E6B81700AFE94C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E26195AC23E6B81700AFE94C /* ConvertingTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertingTextViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +62,7 @@
 		E26195CC23E6B81A00AFE94C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E26195DA23E6BEDF00AFE94C /* ConvertedTextResponseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertedTextResponseEntity.swift; sourceTree = "<group>"; };
 		E26195DC23E6BF5A00AFE94C /* ConvertingTextModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertingTextModel.swift; sourceTree = "<group>"; };
+		FBB826FBCF057278EAA4960A /* Pods-WriteRubyApp-WriteRubyAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WriteRubyApp-WriteRubyAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-WriteRubyApp-WriteRubyAppUITests/Pods-WriteRubyApp-WriteRubyAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A8FAE470DFC278B88622BE9 /* Pods_WriteRubyApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44FF1826786A1FF898FDDA02 /* Pods_WriteRubyAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +86,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A30B8A5EAA0D4A9EBFE78D0 /* Pods_WriteRubyApp_WriteRubyAppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7BB87B109C66C2A0688F0DF9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				20D6F905353B7552F65CA574 /* Pods_WriteRubyApp.framework */,
+				C94E72D3D9F95E59ACCC626F /* Pods_WriteRubyApp_WriteRubyAppUITests.framework */,
+				A2B43B295D934C966F5CD219 /* Pods_WriteRubyAppTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E261959E23E6B81700AFE94C = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +110,8 @@
 				E26195BE23E6B81A00AFE94C /* WriteRubyAppTests */,
 				E26195C923E6B81A00AFE94C /* WriteRubyAppUITests */,
 				E26195A823E6B81700AFE94C /* Products */,
+				E640D5DD2A01193B30235A6F /* Pods */,
+				7BB87B109C66C2A0688F0DF9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -147,6 +174,20 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		E640D5DD2A01193B30235A6F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				13B41FC6F84C69450CEB19EB /* Pods-WriteRubyApp.debug.xcconfig */,
+				7E118F3A4243F018F90D09A6 /* Pods-WriteRubyApp.release.xcconfig */,
+				FBB826FBCF057278EAA4960A /* Pods-WriteRubyApp-WriteRubyAppUITests.debug.xcconfig */,
+				624A68AE94EFED58EADD9697 /* Pods-WriteRubyApp-WriteRubyAppUITests.release.xcconfig */,
+				8CB806FC5887D13B221F1377 /* Pods-WriteRubyAppTests.debug.xcconfig */,
+				3DF6C86E94D1C63EAEA15C8E /* Pods-WriteRubyAppTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -154,9 +195,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E26195CF23E6B81A00AFE94C /* Build configuration list for PBXNativeTarget "WriteRubyApp" */;
 			buildPhases = (
+				4805AEA583410EABBBDFBC17 /* [CP] Check Pods Manifest.lock */,
 				E26195A323E6B81700AFE94C /* Sources */,
 				E26195A423E6B81700AFE94C /* Frameworks */,
 				E26195A523E6B81700AFE94C /* Resources */,
+				0BA2C965DFF543E0AA18FD9A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -171,6 +214,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E26195D223E6B81A00AFE94C /* Build configuration list for PBXNativeTarget "WriteRubyAppTests" */;
 			buildPhases = (
+				765DCC9C5C3F0266D1F2786C /* [CP] Check Pods Manifest.lock */,
 				E26195B723E6B81A00AFE94C /* Sources */,
 				E26195B823E6B81A00AFE94C /* Frameworks */,
 				E26195B923E6B81A00AFE94C /* Resources */,
@@ -189,9 +233,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E26195D523E6B81A00AFE94C /* Build configuration list for PBXNativeTarget "WriteRubyAppUITests" */;
 			buildPhases = (
+				58054303AB579477C58827AA /* [CP] Check Pods Manifest.lock */,
 				E26195C223E6B81A00AFE94C /* Sources */,
 				E26195C323E6B81A00AFE94C /* Frameworks */,
 				E26195C423E6B81A00AFE94C /* Resources */,
+				C1A8241434A1F549EE1C4B79 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -272,6 +318,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0BA2C965DFF543E0AA18FD9A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WriteRubyApp/Pods-WriteRubyApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WriteRubyApp/Pods-WriteRubyApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WriteRubyApp/Pods-WriteRubyApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4805AEA583410EABBBDFBC17 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WriteRubyApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		58054303AB579477C58827AA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WriteRubyApp-WriteRubyAppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		765DCC9C5C3F0266D1F2786C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WriteRubyAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C1A8241434A1F549EE1C4B79 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WriteRubyApp-WriteRubyAppUITests/Pods-WriteRubyApp-WriteRubyAppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WriteRubyApp-WriteRubyAppUITests/Pods-WriteRubyApp-WriteRubyAppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WriteRubyApp-WriteRubyAppUITests/Pods-WriteRubyApp-WriteRubyAppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E26195A323E6B81700AFE94C /* Sources */ = {
@@ -454,6 +603,7 @@
 		};
 		E26195D023E6B81A00AFE94C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13B41FC6F84C69450CEB19EB /* Pods-WriteRubyApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -471,6 +621,7 @@
 		};
 		E26195D123E6B81A00AFE94C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E118F3A4243F018F90D09A6 /* Pods-WriteRubyApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -488,6 +639,7 @@
 		};
 		E26195D323E6B81A00AFE94C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8CB806FC5887D13B221F1377 /* Pods-WriteRubyAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -508,6 +660,7 @@
 		};
 		E26195D423E6B81A00AFE94C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3DF6C86E94D1C63EAEA15C8E /* Pods-WriteRubyAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -528,6 +681,7 @@
 		};
 		E26195D623E6B81A00AFE94C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FBB826FBCF057278EAA4960A /* Pods-WriteRubyApp-WriteRubyAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -547,6 +701,7 @@
 		};
 		E26195D723E6B81A00AFE94C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 624A68AE94EFED58EADD9697 /* Pods-WriteRubyApp-WriteRubyAppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
