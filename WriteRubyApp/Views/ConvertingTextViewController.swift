@@ -12,6 +12,8 @@ class ConvertingTextViewController: UIViewController {
 
     var model = ConvertingTextModel()
 
+    @IBOutlet weak var validateLabel: UILabel!
+    
     @IBOutlet weak var convertingInputTextField: UITextField!
 
     @IBOutlet weak var convertButton: UIButton!
@@ -24,7 +26,14 @@ class ConvertingTextViewController: UIViewController {
     }
 
     @IBAction func tapConvertingButton(_ sender: UIButton) {
-        model.requestConvertedText()
+        if convertingInputTextField.text != nil && convertingInputTextField.text != "" {
+            model.requestConvertedText()
+            validateLabel.text = "変換したいテキスト"
+            validateLabel.textColor = UIColor.black
+        } else {
+            validateLabel.text = "何か文字を入力してください"
+            validateLabel.textColor = UIColor.red
+        }
     }
 
 }

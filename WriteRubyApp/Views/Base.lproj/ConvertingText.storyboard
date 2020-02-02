@@ -60,6 +60,7 @@
                     <connections>
                         <outlet property="convertButton" destination="dhk-AF-L6z" id="zWF-FO-Tw7"/>
                         <outlet property="convertingInputTextField" destination="Z00-hX-es8" id="DHW-JA-gT7"/>
+                        <outlet property="validateLabel" destination="I1g-gQ-O6W" id="4Ue-Uc-S4f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
