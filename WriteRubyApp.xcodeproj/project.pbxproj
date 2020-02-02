@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E26195AB23E6B81700AFE94C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26195AA23E6B81700AFE94C /* AppDelegate.swift */; };
-		E26195AD23E6B81700AFE94C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26195AC23E6B81700AFE94C /* ViewController.swift */; };
-		E26195B023E6B81700AFE94C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E26195AE23E6B81700AFE94C /* Main.storyboard */; };
+		E26195AD23E6B81700AFE94C /* ConvertingTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26195AC23E6B81700AFE94C /* ConvertingTextViewController.swift */; };
+		E26195B023E6B81700AFE94C /* ConvertingText.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E26195AE23E6B81700AFE94C /* ConvertingText.storyboard */; };
 		E26195B223E6B81A00AFE94C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E26195B123E6B81A00AFE94C /* Assets.xcassets */; };
 		E26195B523E6B81A00AFE94C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E26195B323E6B81A00AFE94C /* LaunchScreen.storyboard */; };
 		E26195C023E6B81A00AFE94C /* WriteRubyAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26195BF23E6B81A00AFE94C /* WriteRubyAppTests.swift */; };
@@ -36,8 +36,8 @@
 /* Begin PBXFileReference section */
 		E26195A723E6B81700AFE94C /* WriteRubyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WriteRubyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E26195AA23E6B81700AFE94C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E26195AC23E6B81700AFE94C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E26195AF23E6B81700AFE94C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E26195AC23E6B81700AFE94C /* ConvertingTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertingTextViewController.swift; sourceTree = "<group>"; };
+		E26195AF23E6B81700AFE94C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ConvertingText.storyboard; sourceTree = "<group>"; };
 		E26195B123E6B81A00AFE94C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E26195B423E6B81A00AFE94C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E26195B623E6B81A00AFE94C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -98,8 +98,8 @@
 			isa = PBXGroup;
 			children = (
 				E26195AA23E6B81700AFE94C /* AppDelegate.swift */,
-				E26195AC23E6B81700AFE94C /* ViewController.swift */,
-				E26195AE23E6B81700AFE94C /* Main.storyboard */,
+				E26195AC23E6B81700AFE94C /* ConvertingTextViewController.swift */,
+				E26195AE23E6B81700AFE94C /* ConvertingText.storyboard */,
 				E26195B123E6B81A00AFE94C /* Assets.xcassets */,
 				E26195B323E6B81A00AFE94C /* LaunchScreen.storyboard */,
 				E26195B623E6B81A00AFE94C /* Info.plist */,
@@ -231,7 +231,7 @@
 			files = (
 				E26195B523E6B81A00AFE94C /* LaunchScreen.storyboard in Resources */,
 				E26195B223E6B81A00AFE94C /* Assets.xcassets in Resources */,
-				E26195B023E6B81700AFE94C /* Main.storyboard in Resources */,
+				E26195B023E6B81700AFE94C /* ConvertingText.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,7 +256,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E26195AD23E6B81700AFE94C /* ViewController.swift in Sources */,
+				E26195AD23E6B81700AFE94C /* ConvertingTextViewController.swift in Sources */,
 				E26195AB23E6B81700AFE94C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,12 +293,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E26195AE23E6B81700AFE94C /* Main.storyboard */ = {
+		E26195AE23E6B81700AFE94C /* ConvertingText.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				E26195AF23E6B81700AFE94C /* Base */,
 			);
-			name = Main.storyboard;
+			name = ConvertingText.storyboard;
 			sourceTree = "<group>";
 		};
 		E26195B323E6B81A00AFE94C /* LaunchScreen.storyboard */ = {
