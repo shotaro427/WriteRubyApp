@@ -14,6 +14,8 @@
 		E26195B523E6B81A00AFE94C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E26195B323E6B81A00AFE94C /* LaunchScreen.storyboard */; };
 		E26195C023E6B81A00AFE94C /* WriteRubyAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26195BF23E6B81A00AFE94C /* WriteRubyAppTests.swift */; };
 		E26195CB23E6B81A00AFE94C /* WriteRubyAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26195CA23E6B81A00AFE94C /* WriteRubyAppUITests.swift */; };
+		E26195DB23E6BEDF00AFE94C /* ConvertedTextResponseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26195DA23E6BEDF00AFE94C /* ConvertedTextResponseEntity.swift */; };
+		E26195DD23E6BF5A00AFE94C /* ConvertingTextModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26195DC23E6BF5A00AFE94C /* ConvertingTextModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		E26195C623E6B81A00AFE94C /* WriteRubyAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WriteRubyAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E26195CA23E6B81A00AFE94C /* WriteRubyAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteRubyAppUITests.swift; sourceTree = "<group>"; };
 		E26195CC23E6B81A00AFE94C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E26195DA23E6BEDF00AFE94C /* ConvertedTextResponseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertedTextResponseEntity.swift; sourceTree = "<group>"; };
+		E26195DC23E6BF5A00AFE94C /* ConvertingTextModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertingTextModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +101,9 @@
 		E26195A923E6B81700AFE94C /* WriteRubyApp */ = {
 			isa = PBXGroup;
 			children = (
+				E26195D923E6BD3A00AFE94C /* Models */,
+				E26195D823E6BD3300AFE94C /* Views */,
 				E26195AA23E6B81700AFE94C /* AppDelegate.swift */,
-				E26195AC23E6B81700AFE94C /* ConvertingTextViewController.swift */,
-				E26195AE23E6B81700AFE94C /* ConvertingText.storyboard */,
 				E26195B123E6B81A00AFE94C /* Assets.xcassets */,
 				E26195B323E6B81A00AFE94C /* LaunchScreen.storyboard */,
 				E26195B623E6B81A00AFE94C /* Info.plist */,
@@ -123,6 +127,24 @@
 				E26195CC23E6B81A00AFE94C /* Info.plist */,
 			);
 			path = WriteRubyAppUITests;
+			sourceTree = "<group>";
+		};
+		E26195D823E6BD3300AFE94C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E26195AE23E6B81700AFE94C /* ConvertingText.storyboard */,
+				E26195AC23E6B81700AFE94C /* ConvertingTextViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E26195D923E6BD3A00AFE94C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E26195DA23E6BEDF00AFE94C /* ConvertedTextResponseEntity.swift */,
+				E26195DC23E6BF5A00AFE94C /* ConvertingTextModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +278,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E26195DB23E6BEDF00AFE94C /* ConvertedTextResponseEntity.swift in Sources */,
+				E26195DD23E6BF5A00AFE94C /* ConvertingTextModel.swift in Sources */,
 				E26195AD23E6B81700AFE94C /* ConvertingTextViewController.swift in Sources */,
 				E26195AB23E6B81700AFE94C /* AppDelegate.swift in Sources */,
 			);
