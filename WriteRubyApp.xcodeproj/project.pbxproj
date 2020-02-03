@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,7 @@
 		E26195CB23E6B81A00AFE94C /* WriteRubyAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26195CA23E6B81A00AFE94C /* WriteRubyAppUITests.swift */; };
 		E26195DB23E6BEDF00AFE94C /* ConvertedTextResponseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26195DA23E6BEDF00AFE94C /* ConvertedTextResponseEntity.swift */; };
 		E26195DD23E6BF5A00AFE94C /* ConvertingTextModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26195DC23E6BF5A00AFE94C /* ConvertingTextModel.swift */; };
+		E26195E123E79F2F00AFE94C /* ConvertingTextModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26195E023E79F2F00AFE94C /* ConvertingTextModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		E26195CC23E6B81A00AFE94C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E26195DA23E6BEDF00AFE94C /* ConvertedTextResponseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertedTextResponseEntity.swift; sourceTree = "<group>"; };
 		E26195DC23E6BF5A00AFE94C /* ConvertingTextModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertingTextModel.swift; sourceTree = "<group>"; };
+		E26195E023E79F2F00AFE94C /* ConvertingTextModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertingTextModelTests.swift; sourceTree = "<group>"; };
 		FBB826FBCF057278EAA4960A /* Pods-WriteRubyApp-WriteRubyAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WriteRubyApp-WriteRubyAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-WriteRubyApp-WriteRubyAppUITests/Pods-WriteRubyApp-WriteRubyAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,6 +145,7 @@
 			children = (
 				E26195BF23E6B81A00AFE94C /* WriteRubyAppTests.swift */,
 				E26195C123E6B81A00AFE94C /* Info.plist */,
+				E26195E023E79F2F00AFE94C /* ConvertingTextModelTests.swift */,
 			);
 			path = WriteRubyAppTests;
 			sourceTree = "<group>";
@@ -184,7 +187,6 @@
 				8CB806FC5887D13B221F1377 /* Pods-WriteRubyAppTests.debug.xcconfig */,
 				3DF6C86E94D1C63EAEA15C8E /* Pods-WriteRubyAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -439,6 +441,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E26195C023E6B81A00AFE94C /* WriteRubyAppTests.swift in Sources */,
+				E26195E123E79F2F00AFE94C /* ConvertingTextModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

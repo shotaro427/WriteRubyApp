@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxSwift
 
 /**
  * 入力されたテキストからひらがなに変換するModel
@@ -14,27 +15,42 @@ import Foundation
 struct ConvertingTextModel {
 
     func requestConvertedText() {
+        /// URLSessionの作成
+        let session = URLSession.shared
+        /// リクエストの作成
+        guard let request = createRequest() else { return }
+        /// API通信
+        session.dataTask(with: request) { (data, response, error) in
+            let dic = try! JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! [String: Any]
+            print("*** successed \(dic)")
+        }.resume()
+    }
 
+    /// URLRequestを作成する
+    /// - returns: 作成されたURLRequest
+    private func createRequest() -> URLRequest? {
         /// リクエスト先のURL
         guard let requestUrl = URL(string: "https://labs.goo.ne.jp/api/hiragana") else {
             print("can not convert URL from String")
-            return
+            return nil
         }
-        /// URLSessionの作成
-        let session = URLSession.shared
         /// リクエストオブジェクトの作成
         var request = URLRequest(url: requestUrl)
         // POSTメッソドに指定
         request.httpMethod = "POST"
-        request.httpBody = "app_id=a6e97e3ed0331d34542d7e1f26b9efebe6629285d6a9ebac2c5ab3a03d729cc6&sentence=これはテストです。漢字があります&output_type=hiragana".data(using: String.Encoding.utf8)
+        /// body部分を設定
+        request.httpBody = makeHTTPBody(sentence: "これはテストです。安心してください")
 
-        /// API通信
-        session.dataTask(with: request) { (data, response, error) in
-
-            let dic = try! JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! [String: Any]
-            print("*** successed \(dic)")
-            }.resume()
+        return request
     }
 
+    /// POSTメソッドを実行するためのHTTPBodyを生成する
+    /// - parameters:
+    ///   - sentence: 変換する文字列
+    ///   - outputType: 変換する種類
+    /// - returns: 作成されたHTTPBody
+    private func makeHTTPBody(sentence: String, outputType: String = "hiragana") -> Data? {
 
+        return "app_id=a6e97e3ed0331d34542d7e1f26b9efebe6629285d6a9ebac2c5ab3a03d729cc6&sentence=\(sentence)&output_type=\(outputType)".data(using: String.Encoding.utf8)
+    }
 }
