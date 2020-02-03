@@ -7,10 +7,14 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ConvertingTextViewController: UIViewController {
 
     var model = ConvertingTextModel()
+
+    let disposeBag = DisposeBag()
 
     @IBOutlet weak var validateLabel: UILabel!
     
@@ -22,18 +26,25 @@ class ConvertingTextViewController: UIViewController {
         super.viewDidLoad()
 
         convertingInputTextField.resignFirstResponder()
+
+        subscribeUI()
         // Do any additional setup after loading the view.
     }
 
-    @IBAction func tapConvertingButton(_ sender: UIButton) {
-        if convertingInputTextField.text != nil && convertingInputTextField.text != "" {
-            model.requestConvertedText()
-            validateLabel.text = "変換したいテキスト"
-            validateLabel.textColor = UIColor.black
-        } else {
-            validateLabel.text = "何か文字を入力してください"
-            validateLabel.textColor = UIColor.red
-        }
+    private func subscribeUI() {
+
+        // 「変換」ボタンのイベントを購読
+        convertButton.rx.tap
+            .subscribe(onNext: { [weak self] in
+                if self?.convertingInputTextField.text != nil && self?.convertingInputTextField.text != "" {
+                    self?.model.requestConvertedText()
+                    self?.validateLabel.text = "変換したいテキスト"
+                    self?.validateLabel.textColor = UIColor.black
+                } else {
+                    self?.validateLabel.text = "何か文字を入力してください"
+                    self?.validateLabel.textColor = UIColor.red
+                }
+            }).disposed(by: disposeBag)
     }
 
 }

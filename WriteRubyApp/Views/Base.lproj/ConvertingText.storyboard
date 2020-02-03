@@ -43,9 +43,6 @@
                                         <state key="normal" title="変換">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
-                                        <connections>
-                                            <action selector="tapConvertingButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WpD-ln-TQ3"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
