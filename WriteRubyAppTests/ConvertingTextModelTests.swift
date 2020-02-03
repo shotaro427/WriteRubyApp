@@ -21,4 +21,19 @@ class ConvertedTextModelTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
+    func testCreateRequest() {
+        let testSentence = "漢字漢字"
+        XCTAssertNotNil(model.createRequest(sentence: testSentence))
+    }
+
+    func testMakeHTTPBody() {
+
+        let testSentence = "漢字漢字"
+        XCTAssertNotNil(model.makeHTTPBody(sentence: testSentence))
+
+        let testOutputType = "katakana"
+        XCTAssertNotNil(model.makeHTTPBody(sentence: testSentence, outputType: testOutputType))
+
+
+    }
 }
