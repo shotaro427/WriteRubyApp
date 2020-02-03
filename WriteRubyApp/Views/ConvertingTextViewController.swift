@@ -32,19 +32,26 @@ class ConvertingTextViewController: UIViewController {
     }
 
     private func subscribeUI() {
-
         // 「変換」ボタンのイベントを購読
         convertButton.rx.tap
             .subscribe(onNext: { [weak self] in
-                if self?.convertingInputTextField.text != nil && self?.convertingInputTextField.text != "" {
-                    self?.model.requestConvertedText()
-                    self?.validateLabel.text = "変換したいテキスト"
-                    self?.validateLabel.textColor = UIColor.black
-                } else {
-                    self?.validateLabel.text = "何か文字を入力してください"
-                    self?.validateLabel.textColor = UIColor.red
-                }
+                let canConvert: Bool = self?.convertingInputTextField != nil && self?.convertingInputTextField.text != ""
+                self?.switchValidateLable(canConvert: canConvert)
             }).disposed(by: disposeBag)
+    }
+
+    /// バリデーションの状態を表すラベルを更新させる
+    /// - parameters:
+    ///   - canConvert: 入力されたテキストが条件に合っているかどうか
+    private func switchValidateLable(canConvert: Bool) {
+        if canConvert {
+            self.model.requestConvertedText()
+            self.validateLabel.text = "変換したいテキスト"
+            self.validateLabel.textColor = UIColor.black
+        } else {
+            self.validateLabel.text = "何か文字を入力してください"
+            self.validateLabel.textColor = UIColor.red
+        }
     }
 
 }
