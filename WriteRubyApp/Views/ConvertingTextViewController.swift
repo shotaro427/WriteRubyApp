@@ -16,27 +16,45 @@ class ConvertingTextViewController: UIViewController {
 
     let disposeBag = DisposeBag()
 
-    @IBOutlet weak var validateLabel: UILabel!
-    
-    @IBOutlet weak var convertingInputTextField: UITextField!
 
+    @IBOutlet weak var validateLabel: UILabel!
+    /// 変換前のテキストを表示するTextView
+    @IBOutlet weak var convertingTextView: UITextView!
+    /// 「変換」ボタン
     @IBOutlet weak var convertButton: UIButton!
+    /// 返還後のテキストを表示するTextView
+    @IBOutlet weak var convertedTextView: UITextView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        convertingInputTextField.resignFirstResponder()
-
+        setupTextViewAndButton()
         subscribeUI()
-        // Do any additional setup after loading the view.
+    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        //　キーボードを閉じる
+        convertingTextView.resignFirstResponder()
+    }
+
+    /// 変換前と変換後のテストを表示するTextViewとButtonのセットアップ
+    private func setupTextViewAndButton() {
+        convertingTextView.resignFirstResponder()
+        convertingTextView.layer.borderWidth = 1
+        convertingTextView.layer.borderColor = UIColor.black.cgColor
+
+        convertedTextView.layer.borderWidth = 1
+        convertedTextView.layer.borderColor = UIColor.black.cgColor
+
+        convertButton.layer.cornerRadius = 5
     }
 
     private func subscribeUI() {
         // 「変換」ボタンのイベントを購読
         convertButton.rx.tap
             .subscribe(onNext: { [weak self] in
-                let canConvert: Bool = self?.convertingInputTextField != nil && self?.convertingInputTextField.text != ""
-                self?.switchValidateLable(canConvert: canConvert)
+//                let canConvert: Bool = self?.convertingInputTextField != nil && self?.convertingInputTextField.text != ""
+//                self?.switchValidateLable(canConvert: canConvert)
             }).disposed(by: disposeBag)
     }
 
