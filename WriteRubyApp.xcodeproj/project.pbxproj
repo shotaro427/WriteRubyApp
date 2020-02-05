@@ -17,9 +17,10 @@
 		E26195B523E6B81A00AFE94C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E26195B323E6B81A00AFE94C /* LaunchScreen.storyboard */; };
 		E26195C023E6B81A00AFE94C /* WriteRubyAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26195BF23E6B81A00AFE94C /* WriteRubyAppTests.swift */; };
 		E26195CB23E6B81A00AFE94C /* WriteRubyAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26195CA23E6B81A00AFE94C /* WriteRubyAppUITests.swift */; };
-		E26195DB23E6BEDF00AFE94C /* ConvertedTextResponseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26195DA23E6BEDF00AFE94C /* ConvertedTextResponseEntity.swift */; };
+		E26195DB23E6BEDF00AFE94C /* ConvertingTextResponseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26195DA23E6BEDF00AFE94C /* ConvertingTextResponseEntity.swift */; };
 		E26195DD23E6BF5A00AFE94C /* ConvertingTextModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26195DC23E6BF5A00AFE94C /* ConvertingTextModel.swift */; };
 		E26195E123E79F2F00AFE94C /* ConvertingTextModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26195E023E79F2F00AFE94C /* ConvertingTextModelTests.swift */; };
+		E2F3E9BF23EA3FCF0068B78C /* ConvertingTextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F3E9BE23EA3FCF0068B78C /* ConvertingTextViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,9 +62,10 @@
 		E26195C623E6B81A00AFE94C /* WriteRubyAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WriteRubyAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E26195CA23E6B81A00AFE94C /* WriteRubyAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteRubyAppUITests.swift; sourceTree = "<group>"; };
 		E26195CC23E6B81A00AFE94C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E26195DA23E6BEDF00AFE94C /* ConvertedTextResponseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertedTextResponseEntity.swift; sourceTree = "<group>"; };
+		E26195DA23E6BEDF00AFE94C /* ConvertingTextResponseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertingTextResponseEntity.swift; sourceTree = "<group>"; };
 		E26195DC23E6BF5A00AFE94C /* ConvertingTextModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertingTextModel.swift; sourceTree = "<group>"; };
 		E26195E023E79F2F00AFE94C /* ConvertingTextModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertingTextModelTests.swift; sourceTree = "<group>"; };
+		E2F3E9BE23EA3FCF0068B78C /* ConvertingTextViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertingTextViewModel.swift; sourceTree = "<group>"; };
 		FBB826FBCF057278EAA4960A /* Pods-WriteRubyApp-WriteRubyAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WriteRubyApp-WriteRubyAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-WriteRubyApp-WriteRubyAppUITests/Pods-WriteRubyApp-WriteRubyAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,6 +132,7 @@
 		E26195A923E6B81700AFE94C /* WriteRubyApp */ = {
 			isa = PBXGroup;
 			children = (
+				E2F3E9BD23EA3FAE0068B78C /* ViewModels */,
 				E26195D923E6BD3A00AFE94C /* Models */,
 				E26195D823E6BD3300AFE94C /* Views */,
 				E26195AA23E6B81700AFE94C /* AppDelegate.swift */,
@@ -171,10 +174,18 @@
 		E26195D923E6BD3A00AFE94C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E26195DA23E6BEDF00AFE94C /* ConvertedTextResponseEntity.swift */,
+				E26195DA23E6BEDF00AFE94C /* ConvertingTextResponseEntity.swift */,
 				E26195DC23E6BF5A00AFE94C /* ConvertingTextModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		E2F3E9BD23EA3FAE0068B78C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				E2F3E9BE23EA3FCF0068B78C /* ConvertingTextViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		E640D5DD2A01193B30235A6F /* Pods */ = {
@@ -429,7 +440,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E26195DB23E6BEDF00AFE94C /* ConvertedTextResponseEntity.swift in Sources */,
+				E26195DB23E6BEDF00AFE94C /* ConvertingTextResponseEntity.swift in Sources */,
+				E2F3E9BF23EA3FCF0068B78C /* ConvertingTextViewModel.swift in Sources */,
 				E26195DD23E6BF5A00AFE94C /* ConvertingTextModel.swift in Sources */,
 				E26195AD23E6B81700AFE94C /* ConvertingTextViewController.swift in Sources */,
 				E26195AB23E6B81700AFE94C /* AppDelegate.swift in Sources */,

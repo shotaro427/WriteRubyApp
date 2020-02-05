@@ -11,7 +11,7 @@ import UIKit
 /**
  * APIから返ってきたレスポンスの振る舞い
  */
-struct ConvertedTextResponseEntity {
+struct ConvertingTextResponseEntity {
 
     
 
