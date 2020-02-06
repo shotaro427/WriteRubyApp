@@ -11,8 +11,17 @@ import UIKit
 /**
  * APIから返ってきたレスポンスの振る舞い
  */
-struct ConvertingTextResponseEntity {
+struct ConvertingTextResponseEntity: Codable {
+    var converted: String
+    var output_type: String
+    var request_id: String
+}
 
-    
+struct ConvertingTextErrorEntity: Codable {
+    var error: ConvertingTextError
 
+    struct ConvertingTextError: Codable {
+        var code: Int
+        var message: String
+    }
 }
