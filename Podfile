@@ -8,7 +8,6 @@ target 'WriteRubyApp' do
   # Pods for WriteRubyApp
    pod 'RxSwift'
    pod 'RxCocoa'
-   pod 'APIKit'
 
   target 'WriteRubyAppTests' do
     inherit! :search_paths

@@ -22,7 +22,12 @@ struct ConvertingTextModel {
         /// API通信
         session.dataTask(with: request) { (data, response, error) in
             let dic = try! JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! [String: Any]
-            print("*** successed \(dic)")
+
+            if let responseError = dic["error"] {
+                print(" Error \(responseError)")
+            } else {
+                print("*** successed \(dic)")
+            }
         }.resume()
     }
 
