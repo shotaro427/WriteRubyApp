@@ -15,26 +15,54 @@ enum OutputType: String {
     case katakana = "katakana"
 }
 
+/// エラータイプ
+enum APIError: Error {
+    case canNotMakeRequest
+    case responseError(ConvertingTextErrorEntity)
+    case notExistData
+
+}
+
 /**
  * 入力されたテキストからひらがなに変換するModel
  */
 struct ConvertingTextModel {
 
-    func requestConvertedText(sentence: String, outputType: OutputType = .hiragana) {
-        /// URLSessionの作成
-        let session = URLSession.shared
-        /// リクエストの作成
-        guard let request = createRequest(sentence: sentence, outputType: outputType) else { return }
-        /// API通信
-        session.dataTask(with: request) { (data, response, error) in
-            let dic = try! JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! [String: Any]
-
-            if let responseError = dic["error"] {
-                print(" Error \(responseError)")
-            } else {
-                print("*** successed \(dic)")
+    func requestConvertedText(sentence: String, outputType: OutputType = .hiragana) -> Observable<ConvertingTextResponseProtocol> {
+        return Observable.create( { observer in
+            /// URLSessionの作成
+            let session = URLSession.shared
+            /// リクエストの作成
+            guard let request = self.createRequest(sentence: sentence, outputType: outputType) else {
+                observer.on(.error(APIError.canNotMakeRequest))
+                return Disposables.create()
             }
-        }.resume()
+            /// API通信
+            let task = session.dataTask(with: request) { (data, response, error) in
+                guard let data = data else {
+                    observer.on(.error(APIError.notExistData))
+                    return
+                }
+
+                //　エラーを見る
+                if let err = try? JSONDecoder().decode(ConvertingTextErrorEntity.self, from: data) {
+                    observer.on(.error(APIError.responseError(err)))
+                }
+
+                do {
+                    let res = try JSONDecoder().decode(ConvertingTextResponseEntity.self, from: data)
+                    observer.on(.next(res))
+                    observer.on(.completed)
+                } catch let error {
+                    observer.on(.error(error))
+                }
+            }
+            // 実行
+            task.resume()
+            return Disposables.create {
+                task.cancel()
+            }
+        })
     }
 
     /// URLRequestを作成する

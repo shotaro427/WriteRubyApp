@@ -12,8 +12,6 @@ import RxCocoa
 
 class ConvertingTextViewController: UIViewController {
 
-    var model = ConvertingTextModel()
-
     let disposeBag = DisposeBag()
 
 
@@ -55,7 +53,6 @@ class ConvertingTextViewController: UIViewController {
         convertButton.rx.tap.asDriver()
             .drive(onNext: { [weak self] in
                 guard let _self = self else { return }
-                _self.model.requestConvertedText(sentence: _self.convertingTextView.text)
             }).disposed(by: disposeBag)
 
         convertingTextView.rx.text.asDriver()

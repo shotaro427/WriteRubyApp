@@ -6,12 +6,14 @@
 //  Copyright © 2020 田内　翔太郎. All rights reserved.
 //
 
-import UIKit
+import Foundation
+
+protocol ConvertingTextResponseProtocol: Codable {}
 
 /**
  * APIから返ってきたレスポンスの振る舞い
  */
-struct ConvertingTextResponseEntity: Codable {
+struct ConvertingTextResponseEntity: ConvertingTextResponseProtocol {
     var converted: String
     var output_type: String
     var request_id: String
@@ -20,7 +22,7 @@ struct ConvertingTextResponseEntity: Codable {
 /**
 * APIから返ってきたレスポンスがエラーだった時の振る舞い
 */
-struct ConvertingTextErrorEntity: Codable {
+struct ConvertingTextErrorEntity: ConvertingTextResponseProtocol {
     var error: ConvertingTextError
 
     struct ConvertingTextError: Codable {

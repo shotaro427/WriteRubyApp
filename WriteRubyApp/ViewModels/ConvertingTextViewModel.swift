@@ -10,4 +10,8 @@ import Foundation
 
 struct ConvertingTextViewModel {
 
+    let model = ConvertingTextModel()
+
+    
+
 }
