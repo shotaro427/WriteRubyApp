@@ -17,6 +17,9 @@ struct ConvertingTextResponseEntity: Codable {
     var request_id: String
 }
 
+/**
+* APIから返ってきたレスポンスがエラーだった時の振る舞い
+*/
 struct ConvertingTextErrorEntity: Codable {
     var error: ConvertingTextError
 

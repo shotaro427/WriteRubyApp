@@ -54,7 +54,8 @@ class ConvertingTextViewController: UIViewController {
         // 「変換」ボタンのイベントを購読
         convertButton.rx.tap.asDriver()
             .drive(onNext: { [weak self] in
-                self?.model.requestConvertedText()
+                guard let _self = self else { return }
+                _self.model.requestConvertedText(sentence: _self.convertingTextView.text)
             }).disposed(by: disposeBag)
 
         convertingTextView.rx.text.asDriver()
