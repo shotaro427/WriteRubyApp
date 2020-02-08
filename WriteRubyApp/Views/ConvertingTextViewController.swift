@@ -36,6 +36,8 @@ class ConvertingTextViewController: UIViewController {
     @IBOutlet weak var textCopyButton: UIButton!
     /// テキストをクリアするボタン
     @IBOutlet weak var textClearButton: UIBarButtonItem!
+    /// テキストの変換の種類（ひらがな/カタカナ）を変更するボタン
+    @IBOutlet weak var convertTypeSegmentedControl: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,8 +92,9 @@ class ConvertingTextViewController: UIViewController {
         convertButton.rx.tap.asDriver()
             .drive(onNext: { [weak self] in
                 guard let _self = self, let convertingText = _self.convertingTextView.text, !convertingText.isEmpty else { return }
+                let outputType: OutputType = _self.convertTypeSegmentedControl.selectedSegmentIndex == 0 ? OutputType.hiragana : OutputType.katakana
                 // 変換開始
-                _self.viewModel.convertText(sentence: convertingText, outputType: .hiragana)
+                _self.viewModel.convertText(sentence: convertingText, outputType: outputType)
                 // キーボードを下げる
                 _self.convertingTextView.resignFirstResponder()
             }).disposed(by: disposeBag)
@@ -116,6 +119,18 @@ class ConvertingTextViewController: UIViewController {
                 self?.convertingTextView.text = nil
                 self?.convertedTextView.text = nil
             }).disposed(by: disposeBag)
+
+        // ルビのタイプを変換するボタンが変わった時の処理
+        convertTypeSegmentedControl.rx.selectedSegmentIndex.asDriver()
+            .distinctUntilChanged()
+            .drive(onNext: { [weak self] index in
+                //　ボタンの文字を更新
+                if index == 0 {
+                    self?.convertButton.setTitle("ひらがなに変換", for: .normal)
+                } else {
+                    self?.convertButton.setTitle("カタカナに変換", for: .normal)
+                }
+            }).disposed(by: disposeBag)
     }
 
     /// バリデーションの状態を表すラベルを更新させる
@@ -127,11 +142,13 @@ class ConvertingTextViewController: UIViewController {
         if canConvert {
             convertButton.alpha = 1
             validateLabel.text = "変換したいテキスト"
+            validateLabel.font = UIFont.systemFont(ofSize: 20)
             validateLabel.textColor = UIColor.black
 
         } else {
             convertButton.alpha = 0.5
-            validateLabel.text = "何か文字を入力してください"
+            validateLabel.text = "文字を入力してください"
+            validateLabel.font = UIFont.systemFont(ofSize: 15)
             validateLabel.textColor = UIColor.red
         }
     }

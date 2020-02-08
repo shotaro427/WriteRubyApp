@@ -24,12 +24,24 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="KRf-KK-12M">
                                         <rect key="frame" x="0.0" y="0.0" width="384" height="353.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="変換したいテキスト" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I1g-gQ-O6W">
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="88g-iv-ZTl">
                                                 <rect key="frame" x="0.0" y="0.0" width="384" height="24"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="変換したいテキスト" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I1g-gQ-O6W">
+                                                        <rect key="frame" x="0.0" y="0.0" width="183.5" height="24"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="g2a-zo-4F6">
+                                                        <rect key="frame" x="247" y="0.0" width="137" height="25"/>
+                                                        <segments>
+                                                            <segment title="ひらがな"/>
+                                                            <segment title="カタカナ"/>
+                                                        </segments>
+                                                    </segmentedControl>
+                                                </subviews>
+                                            </stackView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Scj-cI-Vev">
                                                 <rect key="frame" x="0.0" y="28" width="384" height="281.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -43,7 +55,7 @@
                                                     <constraint firstAttribute="height" constant="40" id="cQ5-yp-edx"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                                <state key="normal" title="変換">
+                                                <state key="normal" title="ひらがなに変換">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
                                             </button>
@@ -133,6 +145,7 @@
                     <connections>
                         <outlet property="activityIndicator" destination="FM2-hz-N09" id="A0d-uC-QLJ"/>
                         <outlet property="convertButton" destination="dhk-AF-L6z" id="zWF-FO-Tw7"/>
+                        <outlet property="convertTypeSegmentedControl" destination="g2a-zo-4F6" id="Z8W-J1-IHc"/>
                         <outlet property="convertedTextView" destination="4C0-dH-drp" id="dcI-E6-M4f"/>
                         <outlet property="convertingTextView" destination="Scj-cI-Vev" id="iiV-1v-lVt"/>
                         <outlet property="indicatorView" destination="yqm-1o-h6W" id="OgZ-pe-pXV"/>
