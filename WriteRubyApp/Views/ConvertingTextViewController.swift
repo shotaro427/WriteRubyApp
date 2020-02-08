@@ -67,6 +67,8 @@ class ConvertingTextViewController: UIViewController {
                 guard let _self = self, let convertingText = _self.convertingTextView.text, !convertingText.isEmpty else { return }
                 // 変換開始
                 _self.viewModel.convertText(sentence: convertingText, outputType: .hiragana)
+                // キーボードを下げる
+                _self.convertingTextView.resignFirstResponder()
             }).disposed(by: disposeBag)
 
         convertingTextView.rx.text.asDriver()
