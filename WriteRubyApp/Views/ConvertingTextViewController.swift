@@ -81,7 +81,7 @@ class ConvertingTextViewController: UIViewController {
         // エラーが出たらアラートを表示する
         viewModel.errorObservable
             .subscribe(onNext: { [weak self] _ in
-                self?.showErrorAlert()
+                self?.showSimpleAlert(alertType: .error)
             }).disposed(by: disposeBag)
     }
 
@@ -138,15 +138,43 @@ class ConvertingTextViewController: UIViewController {
         }
     }
 
-    /// エラーアラートを表示
-    private func showErrorAlert() {
-        let alertController = UIAlertController(title: "エラーが出ました",
-                                                message: "記号などが含まれていなか確認して\nもう一度入力してください。",
+    /// シンプルな「OK」ボタンだけがあるアラートを表示する
+    /// - parameters:
+    ///   - alertType: 表示するアラートの種類
+    private func showSimpleAlert(alertType: AlertType) {
+        let alertController = UIAlertController(title: alertType.title,
+                                                message: alertType.message,
                                                 preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "OK",
                                                 style: .default,
                                                 handler: nil))
         present(alertController, animated: true)
+    }
+
+    /// アラートの表示タイプ
+    enum  AlertType {
+        case error
+        case pasted
+
+        /// アラートのタイトル
+        var title: String {
+            switch self {
+            case .error:
+                return "エラーが出ました"
+            case .pasted:
+                return "コピーしました！"
+            }
+        }
+
+        /// アラートのメッセージ
+        var message: String? {
+            switch self {
+            case .error:
+                return "記号などが含まれていなか確認して\nもう一度入力してください。"
+            case .pasted:
+                return "クリップボードへのコピーが完了しました！"
+            }
+        }
     }
 }
 
