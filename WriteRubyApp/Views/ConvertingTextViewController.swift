@@ -197,7 +197,7 @@ class ConvertingTextViewController: UIViewController {
             case .error:
                 return "記号などが含まれていなか確認して\nもう一度入力してください。"
             case .pasted:
-                return "クリップボードへのコピーが完了しました！"
+                return "クリップボードへの\nコピーが完了しました！"
             }
         }
     }
