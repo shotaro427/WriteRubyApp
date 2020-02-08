@@ -30,23 +30,27 @@ struct ConvertingTextModel {
 
     func requestConvertedText(sentence: String, outputType: OutputType = .hiragana) -> Observable<ConvertingTextResponseProtocol> {
         return Observable.create( { observer in
-            /// URLSessionの作成
-            let session = URLSession.shared
             /// リクエストの作成
             guard let request = self.createRequest(sentence: sentence, outputType: outputType) else {
                 observer.on(.error(APIError.canNotMakeRequest))
                 return Disposables.create()
             }
             /// API通信
-            let task = session.dataTask(with: request) { (data, response, error) in
+            URLSession.shared.dataTask(with: request) { (data, response, error) in
+                // taskErrorを確認
+                if let error = error {
+                    observer.on(.error(error))
+                    return
+                }
+                // Dataがあるかを確認
                 guard let data = data else {
                     observer.on(.error(APIError.notExistData))
                     return
                 }
-
-                //　エラーを見る
+                //　レスポンスエラーを見る
                 if let err = try? JSONDecoder().decode(ConvertingTextErrorEntity.self, from: data) {
                     observer.on(.error(APIError.responseError(err)))
+                    return
                 }
 
                 do {
@@ -56,12 +60,9 @@ struct ConvertingTextModel {
                 } catch let error {
                     observer.on(.error(error))
                 }
-            }
-            // 実行
-            task.resume()
-            return Disposables.create {
-                task.cancel()
-            }
+            }.resume()
+
+            return Disposables.create()
         })
     }
 

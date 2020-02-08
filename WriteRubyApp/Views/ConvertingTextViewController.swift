@@ -12,8 +12,9 @@ import RxCocoa
 
 class ConvertingTextViewController: UIViewController {
 
-    let disposeBag = DisposeBag()
+    private let disposeBag = DisposeBag()
 
+    private let viewModel = ConvertingTextViewModel()
 
     @IBOutlet weak var validateLabel: UILabel!
     /// 変換前のテキストを表示するTextView
@@ -27,6 +28,7 @@ class ConvertingTextViewController: UIViewController {
         super.viewDidLoad()
 
         setupTextViewAndButton()
+        subscribe()
         subscribeUI()
     }
 
@@ -47,12 +49,24 @@ class ConvertingTextViewController: UIViewController {
         convertButton.layer.cornerRadius = 5
     }
 
+    /// 通信結果などを監視する
+    private func subscribe() {
+        // 変換されたテキストを監視
+        viewModel.convertedTextDriver
+            .drive(onNext: { [weak self] convertedText in
+                // 結果を表示するTextViewを更新
+                self?.convertedTextView.text = convertedText
+            }).disposed(by: disposeBag)
+    }
+
     /// UIの挙動を監視する
     private func subscribeUI() {
         // 「変換」ボタンのイベントを購読
         convertButton.rx.tap.asDriver()
             .drive(onNext: { [weak self] in
-                guard let _self = self else { return }
+                guard let _self = self, let convertingText = _self.convertingTextView.text, !convertingText.isEmpty else { return }
+                // 変換開始
+                _self.viewModel.convertText(sentence: convertingText, outputType: .hiragana)
             }).disposed(by: disposeBag)
 
         convertingTextView.rx.text.asDriver()
