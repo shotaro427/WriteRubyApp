@@ -24,6 +24,14 @@ class ConvertingTextViewController: UIViewController {
     /// 返還後のテキストを表示するTextView
     @IBOutlet weak var convertedTextView: UITextView!
 
+    // MARK: - インジケータ
+
+    /// インジケータを表示するView
+    @IBOutlet weak var indicatorView: UIView!
+    /// インジケータ
+    @IBOutlet weak var activityIndicator:
+    UIActivityIndicatorView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -57,6 +65,12 @@ class ConvertingTextViewController: UIViewController {
                 // 結果を表示するTextViewを更新
                 self?.convertedTextView.text = convertedText
             }).disposed(by: disposeBag)
+
+        // ローディング状態を監視してUIを更新
+        viewModel.loadingDriver
+            .drive(onNext: { [weak self] isLoading in
+                self?.switchIndicator(isLoading: isLoading)
+            }).disposed(by: disposeBag)
     }
 
     /// UIの挙動を監視する
@@ -71,6 +85,7 @@ class ConvertingTextViewController: UIViewController {
                 _self.convertingTextView.resignFirstResponder()
             }).disposed(by: disposeBag)
 
+        // テキスト欄のバリデーション
         convertingTextView.rx.text.asDriver()
             .map { $0 != "" }
             .drive(onNext: { [weak self] canConvert in
@@ -96,5 +111,14 @@ class ConvertingTextViewController: UIViewController {
         }
     }
 
+    /// ローディングインジケータの表示/非表示を切り替える
+    private func switchIndicator(isLoading: Bool) {
+        indicatorView.isHidden = !isLoading
+        if isLoading {
+            activityIndicator.startAnimating()
+        } else {
+            activityIndicator.stopAnimating()
+        }
+    }
 }
 
