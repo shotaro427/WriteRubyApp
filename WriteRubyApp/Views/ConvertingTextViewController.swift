@@ -73,8 +73,8 @@ class ConvertingTextViewController: UIViewController {
             }).disposed(by: disposeBag)
 
         // エラーが出たらアラートを表示する
-        viewModel.errorDriver
-            .drive(onNext: { [weak self] error in
+        viewModel.errorObservable
+            .subscribe(onNext: { [weak self] _ in
                 self?.showErrorAlert()
             }).disposed(by: disposeBag)
     }

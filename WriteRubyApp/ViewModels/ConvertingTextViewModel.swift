@@ -21,7 +21,7 @@ struct ConvertingTextViewModel {
     /// 変換したテキストを通知するRelay
     private let convertedTextRelay: BehaviorRelay<String> = BehaviorRelay(value: "")
     /// エラーが出たときに通知するRelay
-    private let errorRelay: BehaviorRelay<Error?> = BehaviorRelay(value: nil)
+    private let errorRelay: PublishRelay<Error?> = PublishRelay()
     /// ローディングの状態を通知するRelay
     private let loadingReay: BehaviorRelay<Bool> = BehaviorRelay(value: false)
 
@@ -30,9 +30,9 @@ struct ConvertingTextViewModel {
     var convertedTextDriver: Driver<String> {
         convertedTextRelay.asDriver()
     }
-    /// エラーを監視するDriver
-    var errorDriver: Driver<Error?> {
-        errorRelay.asDriver()
+    /// エラーを監視するObservable
+    var errorObservable: Observable<Error?> {
+        errorRelay.asObservable()
     }
     /// ローディングの状態を監視するDriver
     var loadingDriver: Driver<Bool> {
