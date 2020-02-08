@@ -23,17 +23,18 @@ class ConvertedTextModelTests: XCTestCase {
 
     func testCreateRequest() {
         let testSentence = "漢字漢字"
-        XCTAssertNotNil(model.createRequest(sentence: testSentence))
+        XCTAssertNotNil(model.createRequest(sentence: testSentence, outputType: .hiragana))
+        XCTAssertNotNil(model.createRequest(sentence: testSentence, outputType: .katakana))
     }
 
     func testMakeHTTPBody() {
 
-        let testSentence = "漢字漢字"
-        XCTAssertNotNil(model.makeHTTPBody(sentence: testSentence))
+        var testSentence = "漢字漢字"
+        XCTAssertNotNil(model.makeHTTPBody(sentence: testSentence, outputType: .hiragana))
+        XCTAssertNotNil(model.makeHTTPBody(sentence: testSentence, outputType: .katakana))
 
-        let testOutputType = "katakana"
-        XCTAssertNotNil(model.makeHTTPBody(sentence: testSentence, outputType: testOutputType))
-
-
+        testSentence = "kanji katakana"
+        XCTAssertNotNil(model.makeHTTPBody(sentence: testSentence, outputType: .hiragana))
+        XCTAssertNotNil(model.makeHTTPBody(sentence: testSentence, outputType: .katakana))
     }
 }

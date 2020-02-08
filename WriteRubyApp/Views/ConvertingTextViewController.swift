@@ -37,7 +37,6 @@ class ConvertingTextViewController: UIViewController {
     /// テキストをクリアするボタン
     @IBOutlet weak var textClearButton: UIBarButtonItem!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
