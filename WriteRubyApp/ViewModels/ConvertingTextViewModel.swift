@@ -28,15 +28,15 @@ struct ConvertingTextViewModel {
     // MARK: - Driver
     /// 変換したテキストを監視するDriver
     var convertedTextDriver: Driver<String> {
-        convertedTextRelay.asDriver()
+        return convertedTextRelay.asDriver()
     }
     /// エラーを監視するObservable
     var errorObservable: Observable<Error?> {
-        errorRelay.asObservable()
+        return errorRelay.asObservable()
     }
     /// ローディングの状態を監視するDriver
     var loadingDriver: Driver<Bool> {
-        loadingReay.asDriver()
+        return loadingReay.asDriver()
     }
 
     // MARK: - Functions

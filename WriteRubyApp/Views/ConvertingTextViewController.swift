@@ -103,6 +103,11 @@ class ConvertingTextViewController: UIViewController {
             .drive(onNext: { [weak self] canConvert in
                 self?.switchValidateLable(canConvert: canConvert)
             }).disposed(by: disposeBag)
+
+        textCopyButton.rx.tap.asDriver()
+            .drive(onNext: { [weak self] in
+                UIPasteboard.general.string = self?.convertedTextView.text
+            }).disposed(by: disposeBag)
     }
 
     /// バリデーションの状態を表すラベルを更新させる
