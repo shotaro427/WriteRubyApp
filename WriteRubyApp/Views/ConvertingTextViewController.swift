@@ -104,10 +104,18 @@ class ConvertingTextViewController: UIViewController {
                 self?.switchValidateLable(canConvert: canConvert)
             }).disposed(by: disposeBag)
 
+        // 「コピー」ボタンを押した時の処理
         textCopyButton.rx.tap.asDriver()
             .drive(onNext: { [weak self] in
                 UIPasteboard.general.string = self?.convertedTextView.text
                 self?.showSimpleAlert(alertType: .pasted)
+            }).disposed(by: disposeBag)
+
+        // 「クリア」ボタンを押した時の処理
+        textClearButton.rx.tap.asDriver()
+            .drive(onNext: { [weak self] in
+                self?.convertingTextView.text = nil
+                self?.convertedTextView.text = nil
             }).disposed(by: disposeBag)
     }
 
