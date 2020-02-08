@@ -119,10 +119,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="ルビルビくん" id="D4k-Zh-M5L">
-                        <rightBarButtonItems>
-                            <barButtonItem title="コピー" id="NAL-6C-eL7"/>
-                            <barButtonItem title="クリア" id="6NU-wD-Yph"/>
-                        </rightBarButtonItems>
+                        <barButtonItem key="leftBarButtonItem" title="クリア" id="6NU-wD-Yph"/>
+                        <barButtonItem key="rightBarButtonItem" title="コピー" id="NAL-6C-eL7"/>
                     </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="FM2-hz-N09" id="A0d-uC-QLJ"/>

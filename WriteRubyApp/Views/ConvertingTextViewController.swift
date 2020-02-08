@@ -107,6 +107,7 @@ class ConvertingTextViewController: UIViewController {
         textCopyButton.rx.tap.asDriver()
             .drive(onNext: { [weak self] in
                 UIPasteboard.general.string = self?.convertedTextView.text
+                self?.showSimpleAlert(alertType: .pasted)
             }).disposed(by: disposeBag)
     }
 
