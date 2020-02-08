@@ -71,6 +71,12 @@ class ConvertingTextViewController: UIViewController {
             .drive(onNext: { [weak self] isLoading in
                 self?.switchIndicator(isLoading: isLoading)
             }).disposed(by: disposeBag)
+
+        // エラーが出たらアラートを表示する
+        viewModel.errorDriver
+            .drive(onNext: { [weak self] error in
+                self?.showErrorAlert()
+            }).disposed(by: disposeBag)
     }
 
     /// UIの挙動を監視する
@@ -119,6 +125,17 @@ class ConvertingTextViewController: UIViewController {
         } else {
             activityIndicator.stopAnimating()
         }
+    }
+
+    /// エラーアラートを表示
+    private func showErrorAlert() {
+        let alertController = UIAlertController(title: "エラーが出ました",
+                                                message: "記号などが含まれていなか確認して\nもう一度入力してください。",
+                                                preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "OK",
+                                                style: .default,
+                                                handler: nil))
+        present(alertController, animated: true)
     }
 }
 

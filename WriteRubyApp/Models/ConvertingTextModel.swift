@@ -21,6 +21,17 @@ enum APIError: Error {
     case responseError(ConvertingTextErrorEntity)
     case notExistData
 
+    /// エラーメッセージ
+    var errorMessage: String {
+        switch  self {
+        case .canNotMakeRequest:
+            return "Can not make URLReauest"
+        case .responseError(let errorEntity):
+            return errorEntity.error.message
+        case .notExistData:
+            return "Not exist response data"
+        }
+    }
 }
 
 /**

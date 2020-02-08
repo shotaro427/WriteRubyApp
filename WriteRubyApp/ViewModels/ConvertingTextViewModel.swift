@@ -16,24 +16,38 @@ struct ConvertingTextViewModel {
     private let disposeBag = DisposeBag()
     /// Model
     private let model = ConvertingTextModel()
+
+    // MARK: - Relay
     /// 変換したテキストを通知するRelay
     private let convertedTextRelay: BehaviorRelay<String> = BehaviorRelay(value: "")
+    /// エラーが出たときに通知するRelay
+    private let errorRelay: BehaviorRelay<Error?> = BehaviorRelay(value: nil)
     /// ローディングの状態を通知するRelay
     private let loadingReay: BehaviorRelay<Bool> = BehaviorRelay(value: false)
+
+    // MARK: - Driver
     /// 変換したテキストを監視するDriver
     var convertedTextDriver: Driver<String> {
         convertedTextRelay.asDriver()
+    }
+    /// エラーを監視するDriver
+    var errorDriver: Driver<Error?> {
+        errorRelay.asDriver()
     }
     /// ローディングの状態を監視するDriver
     var loadingDriver: Driver<Bool> {
         loadingReay.asDriver()
     }
 
+    // MARK: - Functions
+
     ///　テキストを平仮名/カタカナに変換する
     func convertText(sentence: String, outputType: OutputType = .hiragana) {
         model.requestConvertedText(sentence: sentence, outputType: outputType)
             // ローディング状態の更新
-            .do(onCompleted: {
+            .do(onError: { _ in
+                self.loadingReay.accept(false)
+            }, onCompleted: {
                 self.loadingReay.accept(false)
             }, onSubscribe: {
                 self.loadingReay.accept(true)
@@ -45,7 +59,13 @@ struct ConvertingTextViewModel {
                 }
                 self.convertedTextRelay.accept(textEntity.converted)
             }, onError: { error in
-                print("**** \(error.localizedDescription)")
+                if let responseError = error as? APIError {
+                    print("**** \(responseError.errorMessage)")
+                    self.errorRelay.accept(responseError)
+                } else {
+                    print("**** \(error.localizedDescription)")
+                    self.errorRelay.accept(error)
+                }
             }).disposed(by: disposeBag)
     }
 }
