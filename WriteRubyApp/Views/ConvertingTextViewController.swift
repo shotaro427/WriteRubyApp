@@ -33,7 +33,7 @@ class ConvertingTextViewController: UIViewController {
     UIActivityIndicatorView!
 
     /// 変換後のテキストをクリップボードにコピーするボタン
-    @IBOutlet weak var textCopyButton: UIBarButtonItem!
+    @IBOutlet weak var textCopyButton: UIButton!
     /// テキストをクリアするボタン
     @IBOutlet weak var textClearButton: UIBarButtonItem!
     

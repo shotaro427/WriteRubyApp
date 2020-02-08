@@ -59,12 +59,21 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gEY-rh-zb9">
                                         <rect key="frame" x="0.0" y="409.5" width="384" height="353.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="変換したテキスト" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ev7-xf-xmx">
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="olK-Tz-sXB">
                                                 <rect key="frame" x="0.0" y="0.0" width="384" height="24"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="変換したテキスト" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ev7-xf-xmx">
+                                                        <rect key="frame" x="0.0" y="0.0" width="163.5" height="24"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Bh-hB-eFj">
+                                                        <rect key="frame" x="338" y="0.0" width="46" height="24"/>
+                                                        <state key="normal" title="コピー"/>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4C0-dH-drp">
                                                 <rect key="frame" x="0.0" y="34" width="384" height="319.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -119,8 +128,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="ルビルビくん" id="D4k-Zh-M5L">
-                        <barButtonItem key="leftBarButtonItem" title="クリア" id="6NU-wD-Yph"/>
-                        <barButtonItem key="rightBarButtonItem" title="コピー" id="NAL-6C-eL7"/>
+                        <barButtonItem key="rightBarButtonItem" title="クリア" id="6NU-wD-Yph"/>
                     </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="FM2-hz-N09" id="A0d-uC-QLJ"/>
@@ -129,7 +137,7 @@
                         <outlet property="convertingTextView" destination="Scj-cI-Vev" id="iiV-1v-lVt"/>
                         <outlet property="indicatorView" destination="yqm-1o-h6W" id="OgZ-pe-pXV"/>
                         <outlet property="textClearButton" destination="6NU-wD-Yph" id="udl-uE-TGt"/>
-                        <outlet property="textCopyButton" destination="NAL-6C-eL7" id="M1p-oa-nfy"/>
+                        <outlet property="textCopyButton" destination="7Bh-hB-eFj" id="5iJ-zR-bJ8"/>
                         <outlet property="validateLabel" destination="I1g-gQ-O6W" id="4Ue-Uc-S4f"/>
                     </connections>
                 </viewController>
