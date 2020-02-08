@@ -32,6 +32,12 @@ class ConvertingTextViewController: UIViewController {
     @IBOutlet weak var activityIndicator:
     UIActivityIndicatorView!
 
+    /// 変換後のテキストをクリップボードにコピーするボタン
+    @IBOutlet weak var textCopyButton: UIBarButtonItem!
+    /// テキストをクリアするボタン
+    @IBOutlet weak var textClearButton: UIBarButtonItem!
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
